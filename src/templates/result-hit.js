@@ -1,4 +1,4 @@
-const resultHit = (hit, bindEvent) => `<a class="result-hit" ${bindEvent('click', hit, 'Product clicked')}>
+const resultHit = (hit, bindEvent) => `<a class="result-hit">
   <div class="result-hit__image-container">
     <img class="result-hit__image" src="${hit.image}" />
   </div>
@@ -7,9 +7,12 @@ const resultHit = (hit, bindEvent) => `<a class="result-hit" ${bindEvent('click'
     <p class="result-hit__price">$${hit.price}</p>
   </div>
   <div class="result-hit__controls">
-    <button id="view-item" class="result-hit__view" ${bindEvent('view', hit, 'Product viewed')}>View</button>
-    <button id="add-to-cart" class="result-hit__cart" ${bindEvent('conversion', hit, 'Product added to cart')}>Add To Cart</button>
+    <button id="view-item" class="result-hit__view" ${bindEvent('click', hit, 'Product clicked')}>View</button>
+    <button 
+      id="add-to-cart" 
+      class="result-hit__cart" ${bindEvent('conversion', hit, 'Product added to cart')}>Add To Cart</button>
   </div>
-</a>`;
+</a>`
+  ;
 
 export default resultHit;

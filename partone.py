@@ -1,6 +1,5 @@
 import math
 import json
-from typing import Any
 
 def read_data():
     with open('data/products.json', 'r') as f:
@@ -9,7 +8,7 @@ def read_data():
     return data
 
 
-def is_camera(item) -> bool:
+def is_camera(item):
     item_categories = item['categories']
     return 'Cameras & Camcorders' in item_categories
 
